@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useState } from 'react';
 
 export default function MainPage() {
   const cards = [
@@ -29,35 +30,45 @@ export default function MainPage() {
   ];
 
   return (
-    <main className="flex items-center justify-center flex-col bg-gray-100 h-screen">
+    <main className="flex items-center justify-center flex-col bg-gray-200 h-screen">
       <div className=" flex items-center justify-center mb-44 flex-col gap-5">
         <h1 className="text-blue-500 font-bold text-3xl">
           Okey Cards <span className="text-blue-500">Helper</span>
         </h1>
         <h6 className="font-bold text-sm">
-          Simple tool to know which cards remain in the deck
+          Know which cards remain in the deck
         </h6>
         <Image src="/okeyCards.png" alt="Okey Cards" width={200} height={200} />
       </div>
-      <div className="flex items-center flex-col justify-center bg-gray-200 rounded-xl py-6">
+      <div className="flex items-center flex-col justify-center bg-gray-300 rounded-xl py-6">
         <span className="font-bold text-lg mb-3">
           Introduce the cards you already saw
         </span>
 
         <div className="grid grid-cols-8 gap-1 mx-8 w-[500px] font-bold">
           {cards.map((card) => (
-            <div
-              key={card.id}
-              className={`${card.color === 'red' && 'bg-red-500'}
-                ${card.color === 'blue' && 'bg-blue-500'}
-                ${card.color === 'yellow' && 'bg-yellow-500'}
-                h-12 w-12 rounded-md flex items-center justify-center text-xl`}
-            >
-              {card.name}
-            </div>
+            <Card key={card.id} name={card.name} color={card.color} />
           ))}
         </div>
       </div>
     </main>
   );
 }
+
+const Card = (props) => {
+  const [selected, setSelected] = useState(false);
+
+  return (
+    <div
+      key={props.id}
+      className={`${props.color === 'red' && 'bg-red-500'}
+          ${props.color === 'blue' && 'bg-blue-500'}
+          ${props.color === 'yellow' && 'bg-yellow-500'}
+          ${selected && 'bg-gray-500'}
+          h-16 w-12 rounded-md flex items-center justify-center text-xl hover:bg-gray-500 cursor-pointer`}
+      onClick={() => setSelected((p) => !p)}
+    >
+      {props.name}
+    </div>
+  );
+};
