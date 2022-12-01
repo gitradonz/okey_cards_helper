@@ -1,10 +1,62 @@
+import Image from 'next/image';
+
 export default function MainPage() {
+  const cards = [
+    { id: 1, name: '1', color: 'red' },
+    { id: 2, name: '2', color: 'red' },
+    { id: 3, name: '3', color: 'red' },
+    { id: 4, name: '4', color: 'red' },
+    { id: 5, name: '5', color: 'red' },
+    { id: 6, name: '6', color: 'red' },
+    { id: 7, name: '7', color: 'red' },
+    { id: 8, name: '8', color: 'red' },
+    { id: 9, name: '1', color: 'blue' },
+    { id: 10, name: '2', color: 'blue' },
+    { id: 11, name: '3', color: 'blue' },
+    { id: 12, name: '4', color: 'blue' },
+    { id: 13, name: '5', color: 'blue' },
+    { id: 14, name: '6', color: 'blue' },
+    { id: 15, name: '7', color: 'blue' },
+    { id: 16, name: '8', color: 'blue' },
+    { id: 17, name: '1', color: 'yellow' },
+    { id: 18, name: '2', color: 'yellow' },
+    { id: 19, name: '3', color: 'yellow' },
+    { id: 20, name: '4', color: 'yellow' },
+    { id: 21, name: '5', color: 'yellow' },
+    { id: 22, name: '6', color: 'yellow' },
+    { id: 23, name: '7', color: 'yellow' },
+    { id: 24, name: '8', color: 'yellow' },
+  ];
+
   return (
-    <main>
-      <div className="font-bold text-3xl flex w-full items-center justify-center mt-6">
-        <h1 className="text-blue-500">
+    <main className="flex items-center justify-center flex-col bg-gray-100 h-screen">
+      <div className=" flex items-center justify-center mb-44 flex-col gap-5">
+        <h1 className="text-blue-500 font-bold text-3xl">
           Okey Cards <span className="text-blue-500">Helper</span>
         </h1>
+        <h6 className="font-bold text-sm">
+          Simple tool to know which cards remain in the deck
+        </h6>
+        <Image src="/okeyCards.png" alt="Okey Cards" width={200} height={200} />
+      </div>
+      <div className="flex items-center flex-col justify-center bg-gray-200 rounded-xl py-6">
+        <span className="font-bold text-lg mb-3">
+          Introduce the cards you already saw
+        </span>
+
+        <div className="grid grid-cols-8 gap-1 mx-8 w-[500px] font-bold">
+          {cards.map((card) => (
+            <div
+              key={card.id}
+              className={`${card.color === 'red' && 'bg-red-500'}
+                ${card.color === 'blue' && 'bg-blue-500'}
+                ${card.color === 'yellow' && 'bg-yellow-500'}
+                h-12 w-12 rounded-md flex items-center justify-center text-xl`}
+            >
+              {card.name}
+            </div>
+          ))}
+        </div>
       </div>
     </main>
   );
