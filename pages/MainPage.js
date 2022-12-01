@@ -52,6 +52,9 @@ export default function MainPage() {
           ))}
         </div>
       </div>
+      <footer>
+        <span className="font-bold text-xs"> by RdN </span>
+      </footer>
     </main>
   );
 }
