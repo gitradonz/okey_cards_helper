@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { useState } from 'react';
 
 export default function MainPage() {
@@ -30,17 +29,19 @@ export default function MainPage() {
   ];
 
   return (
-    <main className="flex items-center justify-center flex-col bg-gray-200 h-screen">
-      <div className=" flex items-center justify-center mb-44 flex-col gap-5">
-        <h1 className="text-blue-500 font-bold text-3xl">
+    <main className="flex items-center justify-center flex-col mt-10">
+      <div className=" flex items-center justify-center mb-20 flex-col gap-5">
+        <div className=" font-bold text-6xl">
+          <span className="text-red-500">Metin2</span>
+        </div>
+        <div className=" font-bold text-3xl">
           Okey Cards <span className="text-blue-500">Helper</span>
-        </h1>
+        </div>
         <h6 className="font-bold text-sm">
           Know which cards remain in the deck
         </h6>
-        <Image src="/okeyCards.png" alt="Okey Cards" width={200} height={200} />
       </div>
-      <div className="flex items-center flex-col justify-center bg-gray-300 rounded-xl py-6">
+      <div className="flex items-center flex-col justify-center bg-gray-300 rounded-xl p-6">
         <span className="font-bold text-lg mb-3">
           Introduce the cards you already saw
         </span>
