@@ -30,7 +30,7 @@ export default function MainPage() {
 
   return (
     <main className="flex items-center justify-center flex-col mt-10">
-      <div className=" flex items-center justify-center mb-20 flex-col gap-5">
+      <div className=" flex items-center justify-center mb-5 flex-col gap-5">
         <div className=" font-bold text-6xl">
           <span className="text-red-500">Metin2</span>
         </div>
@@ -40,6 +40,10 @@ export default function MainPage() {
         <h6 className="font-bold text-sm">
           Know which cards remain in the deck
         </h6>
+      </div>
+      <div className="flex items-center justify-center mb-5 gap-5">
+        <TablePoints1 />
+        <TablePoints2 />
       </div>
       <div className="flex items-center flex-col justify-center bg-gray-300 rounded-xl p-6">
         <span className="font-bold text-lg mb-3">
@@ -58,6 +62,74 @@ export default function MainPage() {
     </main>
   );
 }
+
+const TablePoints1 = () => {
+  return (
+    <div className="flex items-center justify-center flex-col bg-gray-300 rounded-xl pl-4 pt-2 pb-4">
+      <span className="text-2xl font-bold">Trio Table</span>
+      <div className="grid grid-cols-2 gap-2 content-center">
+        <span className="text-lg font-bold content-center w-20 underline">
+          Combo
+        </span>
+        <span className="text-lg font-bold w-20 content-center underline">
+          Points
+        </span>
+        <span className="text-lg font-bold">1-1-1</span>
+        <span className="text-lg font-bold text-yellow-800">20</span>
+        <span className="text-lg font-bold">2-2-2</span>
+        <span className="text-lg font-bold text-yellow-800">30</span>
+        <span className="text-lg font-bold">3-3-3</span>
+        <span className="text-lg font-bold text-yellow-800">40</span>
+        <span className="text-lg font-bold">4-4-4</span>
+        <span className="text-lg font-bold text-yellow-800">50</span>
+        <span className="text-lg font-bold">5-5-5</span>
+        <span className="text-lg font-bold text-yellow-800">60</span>
+        <span className="text-lg font-bold">6-6-6</span>
+        <span className="text-lg font-bold text-yellow-800">70</span>
+        <span className="text-lg font-bold">7-7-7</span>
+        <span className="text-lg font-bold text-yellow-800">80</span>
+        <span className="text-lg font-bold">8-8-8</span>
+        <span className="text-lg font-bold text-yellow-800">90</span>
+      </div>
+    </div>
+  );
+};
+const TablePoints2 = () => {
+  return (
+    <div className="flex items-center justify-center flex-col bg-gray-300 rounded-xl pl-4 pt-2 pb-4">
+      <span className="text-2xl font-bold">Straight Table</span>
+      <div className="grid grid-cols-3 gap-2 content-center">
+        <span className="text-lg font-bold content-center w-20 underline">
+          Combo
+        </span>
+        <span className="text-lg font-bold w-20 content-center underline">
+          Offset
+        </span>
+        <span className="text-lg font-bold w-20 content-center underline">
+          Suited
+        </span>
+        <span className="text-lg font-bold">1-2-3</span>
+        <span className="text-lg font-bold text-yellow-800">10</span>
+        <span className="text-lg font-bold text-yellow-800">50</span>
+        <span className="text-lg font-bold">2-3-4</span>
+        <span className="text-lg font-bold text-yellow-800">20</span>
+        <span className="text-lg font-bold text-yellow-800">60</span>
+        <span className="text-lg font-bold">3-4-5</span>
+        <span className="text-lg font-bold text-yellow-800">30</span>
+        <span className="text-lg font-bold text-yellow-800">70</span>
+        <span className="text-lg font-bold">4-5-6</span>
+        <span className="text-lg font-bold text-yellow-800">40</span>
+        <span className="text-lg font-bold text-yellow-800">80</span>
+        <span className="text-lg font-bold">5-6-7</span>
+        <span className="text-lg font-bold text-yellow-800">50</span>
+        <span className="text-lg font-bold text-yellow-800">90</span>
+        <span className="text-lg font-bold">6-7-8</span>
+        <span className="text-lg font-bold text-yellow-800">60</span>
+        <span className="text-lg font-bold text-yellow-800">100</span>
+      </div>
+    </div>
+  );
+};
 
 const Card = (props) => {
   const [selected, setSelected] = useState(false);
